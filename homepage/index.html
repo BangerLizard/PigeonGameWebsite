@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- This is an EXAMPLE -->
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+        crossorigin="anonymous">
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+        <link href="styles.css" rel="stylesheet">
+        <title>Homepage</title>
+
+        <!-- Script for the animal question -->
+        <script>
+            // Wait for DOM content to load
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Get all elements with class "water-tribe"
+                let corrects = document.querySelectorAll('.correct');
+
+                // Add event listeners to each correct button
+                for (let i = 0; i < corrects.length; i++) {
+                    corrects[i].addEventListener('click', function() {
+
+                        // Set background color to blue
+                        corrects[i].style.backgroundColor = 'Green';
+
+                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        corrects[i].parentElement.querySelector('.feedback').innerHTML
+                        = 'You are correct!';
+                    });
+                }
+
+                // Get all elements with class "earth-tribe"
+                let incorrects = document.querySelectorAll(".incorrect");
+
+                for (let i = 0; i < incorrects.length; i++) {
+                    incorrects[i].addEventListener('click', function() {
+
+                        // Set background color to brown
+                        incorrects[i].style.backgroundColor = 'Red';
+
+                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
+                        incorrects[i].parentElement.querySelector('.feedback').innerHTML
+                        = 'Wrong, you should know pigeons better';
+
+                    });
+                }
+            });
+        </script>
+    </head>
+
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="https://stunning-telegram-7x547wvpgvv3wrj4-8080.app.github.dev/index.html">Home</a>
+        <a href="https://stunning-telegram-7x547wvpgvv3wrj4-8080.app.github.dev/anatomy.html">Anatomy</a>
+        <a href="https://stunning-telegram-7x547wvpgvv3wrj4-8080.app.github.dev/uses.html">Uses</a>
+        <a href="https://stunning-telegram-7x547wvpgvv3wrj4-8080.app.github.dev/fashion.html">Fashion</a>
+    </div>
+
+
+    <body class="main">
+        <div class="header">
+            <h1>Pigeon Trivia</h1>
+            <h6>Before doing triva, take a gander at the other pages</h6>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h1>How many lungs do pigeons have?</h1>
+                <hr>
+                <button class="incorrect">1</button>
+                <button class="incorrect">2, duh</button>
+                <button class="incorrect">4</button>
+                <button class="correct">9</button>
+                <p class="feedback"></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h1>How fast can pigeons fly?</h1>
+                <hr>
+                <button class="correct">60mph</button>
+                <button class="incorrect">69mph</button>
+                <button class="correct">97kph</button>
+                <button class="incorrect">69kph</button>
+                <p class="feedback"></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section">
+                <h1>Do pigeon knees bend backward?</h1>
+                <hr>
+                <button class="correct">No</button>
+                <button class="incorrect">Yes</button>
+                <p class="feedback"></p>
+            </div>
+        </div>
+    </body>
+</html>
